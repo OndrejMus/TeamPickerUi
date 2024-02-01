@@ -25,11 +25,11 @@ jobs:
     - name: Restore NuGet packages
       env:
         BUILD_CONFIG: Release
-      run: dotnet workload restore --configuration $BUILD_CONFIG --project TeamPickerUi.csproj
+      run: dotnet workload restore --configuration $BUILD_CONFIG --project TeamPickerUi/TeamPickerUi.csproj
         
     # publishes Blazor project to the release-folder
     - name: Publish .NET Core Project
-      run: dotnet publish TeamPickerUi.csproj -c Release -o release --nologo
+      run: dotnet publish TeamPickerUi/TeamPickerUi.csproj -c Release -o release --nologo
       
     # changes the base-tag in index.html from '/' to 'blazor-wasm-tester' to match GitHub Pages repository subdirectory
     - name: Change base-tag in index.html from / to blazor-wasm-tester
