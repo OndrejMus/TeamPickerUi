@@ -1,9 +1,0 @@
-﻿body {
-}
-.members {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    
-    border-radius: 6px;
-}
