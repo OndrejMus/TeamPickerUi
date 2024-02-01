@@ -1,0 +1,68 @@
+﻿
+<div>
+    
+    <div style="display: inline-block;">
+        <label for="teamColor">Color:</label>
+        <input type="color" id="teamColor" @bind-value="@colorPicker.Color" />
+
+        <div style="display: inline-block;">
+            <label for="teamColorAlpha">Alpha (transparency):</label>
+            <input type="range" min="0" max="255" step="1" @bind=colorPicker.AlphaString class="slider" id="teamColorAlpha" @bind:event="oninput" @onchange="Update">
+        </div>
+    </div>
+    <br />
+    <div style="display: inline-block;">
+        <button type="button" @onclick="SetRandomColor">Random color</button>
+
+        <label>Final look (@colorPicker.ColorWithAlphaHex):</label>
+        <div style="background-color: @colorPicker.ColorWithAlphaHex; width:50px;height:25px; display: inline-block;">
+        </div>
+    </div>
+
+</div>
+
+
+
+
+@code {
+    ColorPicker colorPicker;
+
+    [Parameter]
+    public string Alpha { get; set; }
+
+    [Parameter]
+    public bool RandomColor { get; set; }
+
+    [Parameter]
+    public string ColorHex { get { return colorPicker.ColorWithAlphaHex; } set { } }
+
+    [Parameter]
+    public EventCallback<string> ColorHexChanged { get; set; }
+
+    protected override void OnInitialized()
+    {
+        colorPicker = new ColorPicker();
+        colorPicker.AlphaString = Alpha;
+        if (RandomColor)
+        {
+            SetRandomColor();
+
+        }
+        base.OnInitialized();
+    }
+
+    private void Update(EventArgs e)
+    {
+        ColorHexChanged.InvokeAsync(ColorHex);
+    }
+
+    private void SetRandomColor()
+    {
+        colorPicker.SetRandomColor();
+        
+        StateHasChanged();
+        Update(null);
+    }
+
+
+}

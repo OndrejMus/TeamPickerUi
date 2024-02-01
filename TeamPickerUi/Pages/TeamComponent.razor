@@ -1,0 +1,37 @@
+﻿@inject ITeamStorage teamStorage;
+
+<div class="teams-container">
+    @foreach (var team in teamStorage.Teams)
+    {
+            <div class="team" style="background-color: @team.TeamColorHex">
+                <h5>@team.Name (@team.Members.Count members)</h5>
+                @foreach (var member in team.Members)
+                {
+                    <MemberComponent Member="member"></MemberComponent>
+                }
+            </div>        
+    }
+</div>
+
+
+
+@code {
+    protected override void OnInitialized()
+    {
+        teamStorage.StorageUpdated += UpdateUi;
+    }
+
+    private void UpdateUi()
+    {
+        // Update UI logic here
+        StateHasChanged();
+    }
+
+    // Don't forget to unsubscribe when the component is disposed
+    public void Dispose()
+    {
+        teamStorage.StorageUpdated -= UpdateUi;
+    }
+
+
+}

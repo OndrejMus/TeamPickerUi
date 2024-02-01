@@ -1,0 +1,16 @@
+﻿@using TeamPickerUi.Models
+
+
+<div class="flex-item" style="background-color: @Member.MemberColorHex">
+    <h5>@Member.Name</h5>
+    <p>@Member.Rating</p>
+</div>
+
+
+
+@code {
+    
+    [Parameter]
+    public MemberModel Member { get; set; }
+
+}

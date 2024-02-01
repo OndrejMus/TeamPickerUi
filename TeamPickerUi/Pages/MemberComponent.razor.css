@@ -1,0 +1,13 @@
+﻿body {
+}
+.flex-item {
+    background-color: #f1f1f1;
+    /*flex: 1 1 150px;*/
+    /*width: 100px;*/
+    margin: 10px 10px;
+    text-align: center;
+    line-height: 30px;
+    /*font-size: 16px;*/
+    border-radius: 6px;
+    padding: 10px 10px;
+}
