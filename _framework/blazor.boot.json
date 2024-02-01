@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "TeamPickerUi",
   "resources": {
-    "hash": "sha256-o+OkC7ZA9KYnmsK6Scb+ZbZ7xw7ytvITTpehZv5m7g0=",
+    "hash": "sha256-KbTYYZoftiVlfvY3m1+JTTHPbcgKd8IFGMrxhH7xoCc=",
     "jsModuleNative": {
       "dotnet.native.8.0.1.ahpp78valh.js": "sha256-SGOlISx+3G4kkvpC9Uq3qoPGsnjxGmW61QBev0lyI5U="
     },
@@ -59,7 +59,7 @@
       "System.Text.RegularExpressions.wasm": "sha256-VdnuZmDjGEuSAnIhNncIcsTCB0MEMxiiAlTILy4maiQ=",
       "System.Threading.wasm": "sha256-/FtF5K93HaC5jOePr9hVvUtOCRk+51Jk0waSfAN9l0o=",
       "System.wasm": "sha256-VcEDE6pOk70XKMQ28ZpXByBb3BywZlGf2e3G/xiAMhI=",
-      "TeamPickerUi.wasm": "sha256-ZXTNn/yfI+LLEzYzd+pOlvEz8JmIcbyWHxLPWVca0c4="
+      "TeamPickerUi.wasm": "sha256-G6mg1VXBgUKPr/0UWehW0QNAkUIUMjCmxBlZTQkobuA="
     }
   },
   "cacheBootResources": true,
