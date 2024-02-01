@@ -3,8 +3,10 @@
 <div class="teams-container">
     @foreach (var team in teamStorage.Teams)
     {
-            <div class="team" style="background-color: @team.TeamColorHex">
-                <h5>@team.Name (@team.Members.Count members)</h5>
+            <div class="team" style="border-color: @team.TeamColorHex">
+            <h5>@team.Name (@team.GetTeamRating(), W:L @team.WinCount:@team.LossCount) <button class="button" @onclick="@(e => DeleteTeam(team))">X</button></h5>
+            <button class="button" @onclick="@(e => teamStorage.SetWiningTeam(team))">Win!</button>
+                
                 @foreach (var member in team.Members)
                 {
                     <MemberComponent Member="member"></MemberComponent>
@@ -33,5 +35,8 @@
         teamStorage.StorageUpdated -= UpdateUi;
     }
 
-
+    public void DeleteTeam(TeamModel team)
+    {
+        teamStorage.DeleteTeam(team);
+    }
 }

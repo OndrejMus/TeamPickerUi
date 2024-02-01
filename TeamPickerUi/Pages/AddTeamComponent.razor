@@ -21,7 +21,7 @@
     <label for="teamColorAlpha">Team color alpha:</label>
     <input type="range" min="0" max="255" step="1" @bind-value="team.BackgroundColorAlhpaHexString" class="slider" id="teamColorAlpha"><br> *@
     
-    <TeamPickerUi.Components.ColorPicker.ColorPickerComponent Alpha="128" RandomColor=true @bind-ColorHex="team.TeamColorHex" />
+    <TeamPickerUi.Components.ColorPicker.ColorPickerComponent Alpha="255" RandomColor=true @bind-ColorHex="team.TeamColorHex" />
 
     <button type="submit" class="btn btn-primary">Add</button>
 

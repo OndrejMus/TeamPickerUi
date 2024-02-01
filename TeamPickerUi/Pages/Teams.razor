@@ -25,11 +25,19 @@
  
 <div style="display:flex; flex-wrap: wrap; justify-content: center;">
     <h3 style="margin: 0px 10px">Teams</h3>
+    
     <EditForm Model="teamStorage" OnValidSubmit="@RandomizeTeams">
         <FluentValidationValidator TValidator="Validation_TeamStorage" />
         <ValidationSummary />
         <button type="submit" class="btn btn-primary">Randomize teams</button>
     </EditForm>
+
+    <EditForm Model="teamStorage" OnValidSubmit="@SetTeamToCloseRating">
+        <FluentValidationValidator TValidator="Validation_TeamStorage" />
+        <ValidationSummary />
+        <button type="submit" class="btn btn-primary">Set by rating</button>
+    </EditForm>
+
 </div>
 
 <div style="display:flex; flex-wrap: wrap; justify-content: center;">
@@ -62,6 +70,11 @@
     public async Task RandomizeTeams()
     {
         teamStorage.RandomizeTeams();
+    }
+
+    public async Task SetTeamToCloseRating()
+    {
+        teamStorage.SetTeamToCloseRating();
     }
 
 }

@@ -12,11 +12,13 @@ namespace TeamPickerUi.Logic
 
         //void AddMember(MemberModel member);
         void AddTeamMember(TeamModel team, MemberModel member);
-        void RemoveMember(MemberModel member);
+        void DeleteMember(MemberModel member);
         void RemoveTeamMember(TeamModel team, MemberModel member);
         void AddTeam(TeamModel team);
-        void RemoveTeam(TeamModel team);
+        void DeleteTeam(TeamModel team);
         void AddMember(MemberModel member);
         void RandomizeTeams();
+        void SetTeamToCloseRating();
+        void SetWiningTeam(TeamModel winningTeam);
     }
 }

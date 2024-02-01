@@ -13,6 +13,8 @@ public class MemberModel
     //[Required]
     //[Range(1,10000, ErrorMessage ="Rating needs to be between 1 and 10 000.")]
     public int Rating { get; set; } = 1000;
+    public int WinCount { get; set; } = 0;
+    public int LossCount { get; set; } = 0;
 
     public string MemberColorHex { get; set; }
 
